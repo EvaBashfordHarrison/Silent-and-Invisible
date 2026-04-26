@@ -1,0 +1,53 @@
+@font-face {
+  font-family: AzeretMono;
+  src: url('fonts/AzeretMono-TRIAL-Medium.ttf');
+}
+
+html, body {
+  margin: 0;
+  height: 100%;
+  padding: 0;
+  background-color: black;
+  overflow: hidden;
+}
+
+body {
+  margin: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* reference: open source from Uiverse.io by portseif */  
+button {
+  background-color: #ffffff;
+  font-family: 'AzeretMono', monospace;
+  border: 0px solid rgb(209, 213, 219);
+  border-radius: 0.5rem;
+  color: #111827;
+  font-size: 0.875rem;
+  line-height: 1.25rem;
+  padding: 0.75rem 1rem;
+  text-align: center;
+  cursor: pointer;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  -webkit-user-select: none;
+  -ms-touch-action: manipulation;
+  touch-action: manipulation;
+}
+
+button:hover {
+  background-color: #f9fafb;
+}
+
+button:focus {
+  outline: 0px solid rgba(0, 0, 0, 0.1);
+  outline-offset: 2px;
+}
+
+button:focus-visible {
+  -webkit-box-shadow: none;
+  box-shadow: none;
+}
