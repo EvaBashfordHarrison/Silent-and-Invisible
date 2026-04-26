@@ -119,14 +119,15 @@ function setup() {
   // reference: https://www.youtube.com/watch?v=eZHclqx2eJY // Patt Vira 
   // LOGO POINTS SETUP 
   let fs = 100;
-  let midX = (20 * fs) - fs;
-  let startLogoPoints = midX * 0.2;
+  let fullString = 20 * (fs*0.75);
+  let midX = fullString / 2; 
+  let startLogoPoints = (width/2) - midX;
   
   logoPoints = azeretFont.textToPoints('SILENT AND INVISIBLE', startLogoPoints ,height / 2 - 200, fs, {sampleFactor: 0.1, sampleThreshold: 0.02});
 
   // buttons
   startButton = createButton('start');
-  startButton.position(width / 2 - 24, height / 2 + 350);
+  startButton.position(width / 2 - 24, height - 100);
   startButton.addClass('button');
   startButton.mousePressed(()=> {
     mode="play";
@@ -174,7 +175,7 @@ function draw() {
       textSize(h5)
       textLeading(h4*1.4)
       let textBoxWidth = 600
-      text('Welcome to Silent and Invisible, a web project raising awareness on harmful air quality in your city through users movement. \nThis app visualises the air you breathe. Watch real-time air quality data transform into moving particles—each one representing the concentration of pollutants around you. \n\nMove your body to activate the data. \n\nAre you within safe limits, or exceeding them? By combining data with simple visuals, this tool helps you stay informed, and highlight the risks for long term exposure. ', width / 2 - (textBoxWidth / 2), 600, textBoxWidth, height);
+      text('Welcome to Silent and Invisible, a web project raising awareness on harmful air quality in your city through users movement. \nThis app visualises the air you breathe. Watch real-time air quality data transform into moving particles—each one representing the concentration of pollutants around you. \n\nMove your body to activate the data. \n\nAre you within safe limits, or exceeding them? By combining data with simple visuals, this tool helps you stay informed, and highlight the risks for long term exposure. ', width / 2 - (textBoxWidth / 2), 400, textBoxWidth, height);
       
       // -- header logo 'silent and invisible'  
       for(let i = 0; i < logoPoints.length; i++) {
@@ -275,7 +276,6 @@ function draw() {
     } else {
   
       if (needsNewHeadline) { // particles gone, generate new word 
-        // heading = "SILENT AND INVISIBLE"
         heading = updateHeadlineDisease(); // update random disease
         updateTextPoints(heading); // update random disease
         // needsNewHeadline = false; // done 

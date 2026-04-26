@@ -1,5 +1,4 @@
 require('dotenv').config();
-console.log("ALL ENV VARS:", process.env.API_KEY); 
 
 const express = require('express');
 const axios = require('axios');
@@ -9,17 +8,23 @@ app.use(express.static('public'));
 
 app.get('/air-quality', async (req, res) => {
   try {
-    const token = process.env.API_KEY; 
+    const token = process.env.API_KEY;
+
+    if (!token) {
+      return res.status(500).send("API key not found");
+    }
+
     const waqiUrl = `https://api.waqi.info/feed/london/?token=${token}`;
 
-    const response = await fetch(waqiUrl);
-        const data = await response.json();
-        res.json(data);
-    } catch (error) {
-        console.error(error);
-        res.status(500).send("Error fetching data");
-    }
+    const response = await axios.get(waqiUrl);
+    res.json(response.data);
+
+  } catch (error) {
+    console.error(error.message);
+    res.status(500).send("Error fetching data");
+  }
 });
 
-
-app.listen(3000, () => console.log('Listening at http://localhost:3000'));
+app.listen(3000, () => {
+  console.log('Listening at http://localhost:3000');
+});
