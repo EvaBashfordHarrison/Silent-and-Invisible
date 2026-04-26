@@ -1,3 +1,4 @@
+<img width="1173" height="736" alt="hero-image" src="https://github.com/user-attachments/assets/26ff5a29-d2a1-408a-ac34-f58c52f00ba3" />
 # Silent and Invisible 
 
 
