@@ -58,8 +58,8 @@ let logoPoints = [];
 
 // ---- start project 
 function preload() {
-  azeretFont = loadFont('public/fonts/AzeretMono-TRIAL-Light.ttf');
-  azeretBold = loadFont('public/fonts/AzeretMono-TRIAL-Medium.ttf');
+  azeretFont = loadFont('fonts/AzeretMono-TRIAL-Light.ttf');
+  azeretBold = loadFont('fonts/AzeretMono-TRIAL-Medium.ttf');
 }
 
 function setup() {
